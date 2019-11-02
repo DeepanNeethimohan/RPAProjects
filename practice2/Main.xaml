@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="324,356.666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="220,184.666666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -44,41 +44,53 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="304,256.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap:VirtualizedContainerService.HintSize="271.333333333333,462.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:GenericValue" Name="Int">
+      <Variable x:TypeArguments="ui:GenericValue" Name="variable1">
         <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="12">
+          <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="&quot;123&quot;">
             <mva:VisualBasicValue.Result>
               <OutArgument x:TypeArguments="ui:GenericValue" />
             </mva:VisualBasicValue.Result>
           </mva:VisualBasicValue>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="ui:GenericValue" Name="Str">
+      <Variable x:TypeArguments="ui:GenericValue" Name="variable2">
         <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="&quot;34&quot;">
+          <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="&quot;456&quot;">
             <mva:VisualBasicValue.Result>
               <OutArgument x:TypeArguments="ui:GenericValue" />
             </mva:VisualBasicValue.Result>
           </mva:VisualBasicValue>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="ui:GenericValue" Name="Result" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="variable3">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="123">
+            <mva:VisualBasicValue.Result>
+              <OutArgument x:TypeArguments="ui:GenericValue" />
+            </mva:VisualBasicValue.Result>
+          </mva:VisualBasicValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="ui:GenericValue" Name="variable4">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="ui:GenericValue" ExpressionText="456">
+            <mva:VisualBasicValue.Result>
+              <OutArgument x:TypeArguments="ui:GenericValue" />
+            </mva:VisualBasicValue.Result>
+          </mva:VisualBasicValue>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="ui:GenericValue">[Result]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="ui:GenericValue">[Int + Str]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Result]" TextWriter="{x:Null}" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[variable1+variable2]" TextWriter="{x:Null}" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[variable3+variable4]" TextWriter="{x:Null}" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[variable1+variable3]" TextWriter="{x:Null}" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[variable3+variable1]" TextWriter="{x:Null}" />
   </Sequence>
 </Activity>
